@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+<link rel="stylesheet" th:href="@{styles.css}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+	rel="stylesheet">
+</head>
+<body>
+	<div class="div-nav">
+		<nav>
+			<ul>
+				<li><a href="#">Tipos</a></li>
+				<li><a href="#">Eventos</a></li>
+				<li><a href="#">Usuarios</a></li>
+				<li><a href="#">Eventos/Tipo</a></li>
+				<li><a href="#">Login</a></li>
+				<li><a href="#">Registro</a></li>
+				<li><a href="#">Salir</a></li>
+			</ul>
+		</nav>
+	</div>
+	<h1 class="text">Listado de eventos activos</h1>
+	<div class="cent">
+		<a th:href="@{/eventos/alta}" class="text border">Nuevo evento</a>
+	</div>
+
+	<div class="table-container">
+		<table>
+			<tr>
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>Precio</th>
+
+			</tr>
+			<tr th:each="evento: ${evento}">
+				<td th:text="${evento.idEvento}"></td>
+				<td th:text="${evento.nombre}"></td>
+				<td th:text="${evento.precio}"></td>
+				
+			</tr>
+
+		</table>
+
+		<table>
+			<tr>
+				<th colspan="5">Opciones</th>
+			</tr>
+			<tr th:each="evento: ${evento}">
+				<td><a th:href="@{/eventos/detalle/{id}(id=${evento.idEvento})}">Detalle</a></td>
+				<td><a th:href="@{/eventos/editar/{id}(id=${evento.idEvento})}">Editar</a></td>
+			    <td><a th:href="@{/eventos/eliminar/{id}(id=${evento.idEvento})}">Eliminar</a></td>
+			    <td><a th:href="@{/eventos/cancelar/{id}(id=${evento.idEvento})}">Cancelar</a></td>
+			    <td><a th:href="@{/eventos/activar/{id}(id=${evento.idEvento})}">Activar</a></td>
+			</tr>
+
+		</table>
+	</div>
+	
+	
+	<h3>Información: <span th:text="${mensaje}"></span></h3>
+
+</body>
+</html>

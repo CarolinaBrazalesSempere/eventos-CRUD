@@ -1,0 +1,102 @@
+@charset "ISO-8859-1";
+*{	
+	box-sizing:border-box;
+	text-decoration: none;
+	color: unset;
+	
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	
+}
+
+.border {
+	border: 0.5px solid #9ba7f1;
+	width: max-content;
+	padding: 16px;
+}
+
+.cent, .table-container {
+	display: flex;
+	justify-content: center;
+}
+
+.text, .header, h3 {
+	text-align: center;
+	color: #845ca8;
+}
+
+table {
+	width: 40%;
+	margin: 16px;
+}
+
+table, th, td {
+	border: 0.5px solid;
+	border-color: #9ba7f1;
+	background-color: #845ca8;
+	color: white;
+}
+
+.div-nav {
+	display: flex;
+	justify-content: center;
+	
+}
+
+nav {
+	border: 0.5px solid;
+	border-color: #9ba7f1;
+	background-color: white;
+	width: max-content;
+	padding: 16px;
+}
+
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	display: inline;
+	margin-right: 20px;
+}
+
+nav a {
+	color:#845ca8;
+	
+}
+
+a:hover {
+	color: #00BCD4;
+}
+
+
+form {
+	display: flex;
+	flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
+
+input, select {
+	padding: 8px;
+	margin: 8px;
+}
+
+.btn-login{
+	font-family: inherit;
+	background-color:#845ca8;
+	color: white;
+	font-weight: 8px;
+	font-size: 16px;
+	border: none;
+}
+
+.det-table {
+	width: unset;
+}
+
